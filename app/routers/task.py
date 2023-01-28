@@ -6,6 +6,8 @@ from ..config.db import conn
 
 tasks_router = APIRouter()
 
-# @tasks_router.get("/tasks", response_model=[Task], tags=["tasks"])
-# def get_tasks():
-#     return TaskEntity(conn.local.tasks.find())
+
+@tasks_router.get("/tasks", tags=["tasks"])
+
+def get_tasks():
+    return TaskEntity(conn.local.task.find())
